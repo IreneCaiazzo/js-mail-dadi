@@ -3,16 +3,17 @@
 // Stabilire il vincitore, in base a chi fa il punteggio più alto.
 
 
-const numUser = parseInt(prompt('scegli un numero intero da 1 a 6'));
-console.log('il nummero che hai scelto è:' + numUser);
+const numUser = Math.floor((Math.random() * 6) + 1);
+document.getElementById('numUser').innerHTML = numUser;
 const numComp = Math.floor((Math.random() * 6) + 1);
-console.log('il numero che ha generato il computer è:' + numComp);
+document.getElementById('numComp').innerHTML = numComp;
 
 if (numUser < numComp){
-    alert ('il nummero maggiore è:' + numComp);
-    
-}else if (numUser > numComp){
-    alert ('il numero maggiore è:' + numUser); 
-}else{
-    alert ('i due numeri sono uguali')
+    document.getElementById('results').innerHTML = "Ritenta";
+}
+else if (numUser > numComp){
+    document.getElementById('results').innerHTML = "Hai vinto!";
+}
+else{
+    document.getElementById('results').innerHTML = "Pareggio";
 }
